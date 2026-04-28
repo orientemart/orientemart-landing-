@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LUFLO Kitchenware - Premium Cookware Manufacturer OEM ODM Factory">
+    <title>LUFLO | Kitchenware Manufacturer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {scroll-behavior: smooth;}
+        body {
+            font-family: 'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;
+            color:#333;
+            line-height:1.7;
+            background:#fff;
+            overflow-x:hidden;
+        }
+        /* 阿拉伯语从右往左排版 */
+        body.rtl {direction: rtl;}
+        ul,ol{list-style:none;}
+        a{text-decoration:none;color:inherit;transition:0.3s;}
+        img{max-width:100%;display:block;}
+        .container{width:92%;max-width:1200px;margin:0 auto;}
+        .section-padding{padding:80px 0;}
+        .section-title{text-align:center;margin-bottom:60px;}
+        .section-title h2{font-size:34px;color:#1a1a1a;margin-bottom:12px;font-weight:700;}
+        .section-title p{color:#666;font-size:16px;max-width:750px;margin:0 auto;}
+
+        .btn-main{
+            display:inline-block;
+            background:#c9973b;
+            color:#fff;
+            padding:13px 32px;
+            border-radius:2px;
+            border:none;
+            cursor:pointer;
+            transition:0.3s;
+        }
+        .btn-main:hover{background:#b3832e;transform:translateY(-3px);}
+        .btn-outline{
+            display:inline-block;
+            border:1px solid #fff;
+            color:#fff;
+            padding:12px 30px;
+            border-radius:2px;
+            transition:0.3s;
+        }
+        .btn-outline:hover{background:#fff;color:#000;}
+
+        /* 顶部栏 */
+        .top-bar{background:#111;color:#ccc;font-size:14px;padding:10px 0;}
+        .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+        .lang-switch a{color:#ccc;margin:0 4px;padding:3px 6px;border:1px solid #444;border-radius:3px;font-size:13px;}
+        .lang-switch a.active{background:#c9973b;color:#fff;border-color:#c9973b;}
+        .top-right a{color:#ccc;margin-left:15px;}
+        .top-right a:hover{color:#c9973b;}
+
+        /* 导航 */
+        .header-nav{background:#000;padding:18px 0;position:sticky;top:0;z-index:999;box-shadow:0 2px 10px rgba(0,0,0,0.15);}
+        .nav-inner{display:flex;justify-content:space-between;align-items:center;}
+        .logo{font-size:28px;font-weight:800;color:#fff;}
+        .main-menu ul{display:flex;gap:25px;}
+        .main-menu ul li a{color:#fff;font-size:15px;text-transform:uppercase;letter-spacing:0.5px;}
+        .main-menu ul li a:hover{color:#c9973b;}
+        .mobile-menu-btn{display:none;color:#fff;font-size:26px;}
+
+        /* 首页横幅：修复后的稳定背景图 */
+        .hero-banner{
+            height:90vh;
+            background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+            url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size:cover;
+            background-position:center;
+            display:flex;align-items:center;color:#fff;
+        }
+        .hero-content h1{font-size:52px;line-height:1.25;margin-bottom:22px;}
+        .hero-content h1 span{color:#c9973b;}
+        .hero-content p{font-size:17px;color:#e6e6e6;max-width:650px;margin-bottom:35px;}
+        .hero-buttons{display:flex;gap:20px;flex-wrap:wrap;}
+
+        /* 分类 */
+        .category-section{background:#f8f8f8;}
+        .category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;}
+        .category-card{background:#fff;padding:35px 25px;text-align:center;border-radius:4px;transition:0.35s;box-shadow:0 2px 15px rgba(0,0,0,0.06);}
+        .category-card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,0.1);}
+        .category-card i{font-size:45px;color:#c9973b;margin-bottom:20px;}
+        .category-card h3{font-size:20px;margin-bottom:12px;color:#1a1a1a;}
+        .category-card p{color:#666;font-size:15px;}
+
+        /* 产品 */
+        .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
+        .product-card{background:#fff;border:1px solid #eee;border-radius:4px;overflow:hidden;transition:0.3s;}
+        .product-card:hover{box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+        .product-img{overflow:hidden;}
+        .product-img img{transition:0.4s;}
+        .product-card:hover .product-img img{transform:scale(1.06);}
+        .product-info{padding:22px;}
+        .product-info h4{font-size:18px;margin-bottom:10px;color:#222;}
+        .product-info .feature{font-size:14px;color:#777;margin-bottom:15px;}
+
+        /* 关于我们 */
+        .about-section{background:#f8f8f8;}
+        .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
+        .about-text h3{font-size:28px;margin-bottom:20px;color:#1a1a1a;}
+        .about-text p{color:#666;margin-bottom:18px;font-size:16px;}
+
+        /* 工厂实力 */
+        .strength-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
+        .strength-item{text-align:center;padding:40px 25px;border:1px solid #eee;background:#fff;transition:0.3s;}
+        .strength-item:hover{background:#111;color:#fff;}
+        .strength-item i{font-size:40px;color:#c9973b;margin-bottom:18px;}
+        .strength-item h4{font-size:19px;margin-bottom:10px;}
+
+        /* 定制服务 */
+        .custom-section{background:#111;color:#fff;}
+        .custom-section .section-title h2{color:#fff;}
+        .custom-section .section-title p{color:#bbb;}
+        .custom-process{max-width:900px;margin:0 auto;}
+        .process-step{display:flex;align-items:center;margin-bottom:25px;gap:20px;}
+        .step-number{width:45px;height:45px;background:#c9973b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#fff;}
+
+        /* 客户评价 */
+        .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+        .review-card{background:#f9f9f9;padding:30px;border-radius:5px;}
+        .review-card p{color:#555;font-style:italic;margin-bottom:15px;}
+        .review-name{color:#c9973b;font-weight:600;}
+
+        /* 联系我们 */
+        .contact-section{background:#1a1a1a;color:#fff;}
+        .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
+        .contact-info h4{font-size:22px;margin-bottom:25px;color:#c9973b;}
+        .contact-info p{margin-bottom:15px;color:#ccc;}
+        .contact-info i{color:#c9973b;margin-right:10px;}
+        .contact-form input,.contact-form textarea{width:100%;padding:14px;margin-bottom:18px;background:#2c2c2c;border:none;color:#fff;outline:none;border-radius:2px;}
+        .contact-form textarea{height:130px;resize:none;}
+
+        /* 悬浮WhatsApp */
+        .float-whatsapp{position:fixed;right:25px;bottom:25px;width:60px;height:60px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;z-index:9999;box-shadow:0 5px 15px rgba(37,211,102,0.4);}
+        body.rtl .float-whatsapp{right:auto;left:25px;}
+
+        /* 页脚 */
+        footer{background:#000;color:#999;padding:60px 0 20px;}
+        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:40px;margin-bottom:40px;}
+        .footer-col h3{color:#fff;font-size:20px;margin-bottom:22px;}
+        .footer-col p,.footer-col a{font-size:15px;margin-bottom:10px;display:block;}
+        .footer-col a:hover{color:#c9973b;}
+        .copyright{text-align:center;padding-top:25px;border-top:1px solid #222;font-size:14px;}
+
+        /* 多语言容器 默认只显示当前语言 */
+        .lang-en,.lang-fr,.lang-es,.lang-pt,.lang-ru,.lang-ar{display:none;}
+        .active-lang{display:inline-block;}
+
+        /* 移动端适配 */
+        @media (max-width:992px){
+            .main-menu{display:none;}
+            .mobile-menu-btn{display:block;}
+            .about-wrap,.contact-wrap{grid-template-columns:1fr;}
+            .hero-content h1{font-size:40px;}
+        }
+        @media (max-width:768px){
+            .section-title h2{font-size:28px;}
+            .hero-banner{height:75vh;}
+            .hero-content h1{font-size:32px;}
+            .top-bar-inner{justify-content:center;text-align:center;}
+        }
+        @media (max-width:480px){
+            .hero-buttons{flex-direction:column;}
+            .hero-content h1{font-size:26px;}
+        }
+    </style>
+</head>
+<body>
+<!-- 顶部栏 -->
+<div class="top-bar">
+    <div class="container top-bar-inner">
+        <div class="top-left">
+            <span><i class="fa-solid fa-gift"></i> <span class="lang-en">Free Sample</span><span class="lang-fr">Échantillon Gratuit</span><span class="lang-es">Muestra Gratis</span><span class="lang-pt">Amostra Grátis</span><span class="lang-ru">Бесплатный образец</span><span class="lang-ar">عينة مجانية</span></span>
+            <span><i class="fa-solid fa-truck"></i> <span class="lang-en">Global Shipping</span><span class="lang-fr">Livraison Mondiale</span><span class="lang-es">Envío Global</span><span class="lang-pt">Envio Global</span><span class="lang-ru">Глобальная доставка</span><span class="lang-ar">شحن عالمي</span></span>
+            <span><i class="fa-solid fa-headset"></i> <span class="lang-en">24/7 Support</span><span class="lang-fr">Support 24/7</span><span class="lang-es">Soporte 24/7</span><span class="lang-pt">Suporte 24/7</span><span class="lang-ru">Поддержка 24/7</span><span class="lang-ar">دعم 24/7</span></span>
+        </div>
+        <div class="lang-switch">
+            <a href="javascript:;" onclick="switchLang('en')" class="active">EN</a>
+            <a href="javascript:;" onclick="switchLang('fr')">FR</a>
+            <a href="javascript:;" onclick="switchLang('es')">ES</a>
+            <a href="javascript:;" onclick="switchLang('pt')">PT</a>
+            <a href="javascript:;" onclick="switchLang('ru')">RU</a>
+            <a href="javascript:;" onclick="switchLang('ar')">AR</a>
+        </div>
+        <div class="top-right">
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- 导航 -->
+<header class="header-nav">
+    <div class="container nav-inner">
+        <a href="#" class="logo">LUFLO</a>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#home"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="lang-es">Inicio</span><span class="lang-pt">Início</span><span class="lang-ru">Главная</span><span class="lang-ar">الرئيسية</span></a></li>
+                <li><a href="#category"><span class="lang-en">Categories</span><span class="lang-fr">Catégories</span><span class="lang-es">Categorías</span><span class="lang-pt">Categorias</span><span class="lang-ru">Категории</span><span class="lang-ar">الفئات</span></a></li>
+                <li><a href="#products"><span class="lang-en">Products</span><span class="lang-fr">Produits</span><span class="lang-es">Productos</span><span class="lang-pt">Produtos</span><span class="lang-ru">Продукция</span><span class="lang-ar">المنتجات</span></a></li>
+                <li><a href="#about"><span class="lang-en">About Us</span><span class="lang-fr">À Propos</span><span class="lang-es">Nosotros</span><span class="lang-pt">Sobre Nós</span><span class="lang-ru">О нас</span><span class="lang-ar">معلومات عنا</span></a></li>
+                <li><a href="#factory"><span class="lang-en">Factory</span><span class="lang-fr">Usine</span><span class="lang-es">Fábrica</span><span class="lang-pt">Fábrica</span><span class="lang-ru">Завод</span><span class="lang-ar">المصنع</span></a></li>
+                <li><a href="#custom"><span class="lang-en">OEM ODM</span><span class="lang-fr">OEM ODM</span><span class="lang-es">OEM ODM</span><span class="lang-pt">OEM ODM</span><span class="lang-ru">OEM ODM</span><span class="lang-ar">OEM ODM</span></a></li>
+                <li><a href="#review"><span class="lang-en">Reviews</span><span class="lang-fr">Avis</span><span class="lang-es">Reseñas</span><span class="lang-pt">Avaliações</span><span class="lang-ru">Отзывы</span><span class="lang-ar">التقييمات</span></a></li>
+                <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span><span class="lang-es">Contacto</span><span class="lang-pt">Contato</span><span class="lang-ru">Контакты</span><span class="lang-ar">تواصل</span></a></li>
+            </ul>
+        </nav>
+        <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+    </div>
+</header>
+
+<!-- 首页横幅 -->
+<section class="hero-banner" id="home">
+    <div class="container">
+        <div class="hero-content">
+            <h1>
+                <span class="lang-en">High Quality <span>LUFLO Kitchenware</span> Manufacturer</span>
+                <span class="lang-fr">Fabricant <span>LUFLO</span> d'Artices de Cuisine Haute Qualité</span>
+                <span class="lang-es">Fabricante de Utensilios de Cocina <span>LUFLO</span> Alta Calidad</span>
+                <span class="lang-pt">Fabricante de Utensílios de Cozinha <span>LUFLO</span> Alta Qualidade</span>
+                <span class="lang-ru">Производитель качественной посуды <span>LUFLO</span></span>
+                <span class="lang-ar">مصنع أواني مطبخ عالية الجودة <span>LUFLO</span></span>
+            </h1>
+            <p>
+                <span class="lang-en">We supply premium food grade cookware, frying pans, soup pots and kitchen utensils. Professional OEM & ODM service.</span>
+                <span class="lang-fr">Fournisseur de casseroles, poêles et ustensiles de cuisine. Service OEM & ODM professionnel.</span>
+                <span class="lang-es">Suministramos baterías de cocina, sartenes y utensilios. Servicio OEM y ODM profesional.</span>
+                <span class="lang-pt">Fornecemos panelas, frigideiras e utensílios de cozinha. Serviço OEM e ODM profissional.</span>
+                <span class="lang-ru">Поставляем качественную кухонную посуду, сковороды и кастрюли. Профессиональные услуги OEM/ODM.</span>
+                <span class="lang-ar">نورد أواني مطبخ آمنة للطعام، مقالي وقدور. خدمة OEM و ODM احترافية.</span>
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-main">
+                    <span class="lang-en">Get Free Quotation</span>
+                    <span class="lang-fr">Devis Gratuit</span>
+                    <span class="lang-es">Cotización Gratis</span>
+                    <span class="lang-pt">Cotação Grátis</span>
+                    <span class="lang-ru">Получить расчет</span>
+                    <span class="lang-ar">احصل على عرض سعر مجاني</span>
+                </a>
+                <a href="#products" class="btn-outline">
+                    <span class="lang-en">View All Products</span>
+                    <span class="lang-fr">Voir Produits</span>
+                    <span class="lang-es">Ver Productos</span>
+                    <span class="lang-pt">Ver Produtos</span>
+                    <span class="lang-ru">Смотреть продукцию</span>
+                    <span class="lang-ar">عرض المنتجات</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 产品分类 -->
+<section class="category-section section-padding" id="category">
+    <div class="container">
+        <div class="section-title">
+            <h2>
+                <span class="lang-en">Our Main Product Categories</span>
+                <span class="lang-fr">Nos Catégories Principales</span>
+                <span class="lang-es">Nuestras Categorías Principales</span>
+                <span class="lang-pt">Nossas Categorias Principais</span>
+                <span class="lang-ru">Основные категории продукции</span>
+                <span class="lang-ar">فئات منتجاتنا الرئيسية</span>
+            </h2>
+            <p>
+                <span class="lang-en">Full series kitchenware for family, restaurant and wholesale</span>
+                <span class="lang-fr">Tous articles pour maison, restaurant et gros</span>
+                <span class="lang-es">Artículos para hogar, restaurante y mayorista</span>
+                <span class="lang-pt">Artigos para casa, restaurante e atacado</span>
+                <span class="lang-ru">Посуда для дома, ресторанов и оптовых продаж</span>
+                <span class="lang-ar">أواني مطبخ للمنزل والمطاعم والجملة</span>
+            </p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <i class="fa-solid fa-pot-food"></i>
+                <h3>
+                    <span class="lang-en">Cookware Sets</span>
+                    <span class="lang-fr">Ensembles de Cuisine</span>
+                    <span class="lang-es">Juegos de Cocina</span>
+                    <span class="lang-pt">Conjuntos de Cozinha</span>
+                    <span class="lang-ru">Наборы посуды</span>
+                    <span class="lang-ar">مجموعات الأواني</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Stainless steel & non-stick sets</span>
+                    <span class="lang-fr">Acier inoxydable et antiadhésif</span>
+                    <span class="lang-es">Acero inoxidable y antiadherente</span>
+                    <span class="lang-pt">Aço inoxidável e antiaderente</span>
+                    <span class="lang-ru">Нержавеющая сталь и антипригарное покрытие</span>
+                    <span class="lang-ar">ستانلس ستيل وغير لاصق</span>
+                </p>
+            </div>
+            <div class="category-card">
+                <i class="fa-solid fa-fire-burner"></i>
+                <h3>
+                    <span class="lang-en">Frying Pans</span>
+                    <span class="lang-fr">Poêles</span>
+                    <span class="lang-es">Sartenes</span>
+                    <span class="lang-pt">Frigideiras</span>
+                    <span class="lang-ru">Сковороды</span>
+                    <span class="lang-ar">المقالي</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Non-stick & cast iron pans</span>
+                    <span class="lang-fr">Poêles antiadhésives et fonte</span>
+                    <span class="lang-es">Sartenes antiadherentes y hierro</span>
+                    <span class="lang-pt">Frigideiras antiaderentes e ferro</span>
+                    <span class="lang-ru">Антипригарные и чугунные сковороды</span>
+                    <span class="lang-ar">مقالي غير لاصقة وحديد مصبوب</span>
+                </p>
+            </div>
+            <div class="category-card">
+                <i class="fa-solid fa-utensils"></i>
+                <h3>
+                    <span class="lang-en">Soup Pots</span>
+                    <span class="lang-fr">Casseroles à Soupe</span>
+                    <span class="lang-es">Ollas para Sopa</span>
+                    <span class="lang-pt">Panelas de Sopa</span>
+                    <span class="lang-ru">Кастрюли для супа</span>
+                    <span class="lang-ar">قدر الشوربة</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Large capacity cooking pots</span>
+                    <span class="lang-fr">Grande capacité</span>
+                    <span class="lang-es">Gran capacidad</span>
+                    <span class="lang-pt">Grande capacidade</span>
+                    <span class="lang-ru">Кастрюли большого объема</span>
+                    <span class="lang-ar">قدور بسعة كبيرة</span>
+                </p>
+            </div>
+            <div class="category-card">
+                <i class="fa-solid fa-spoon"></i>
+                <h3>
+                    <span class="lang-en">Kitchen Utensils</span>
+                    <span class="lang-fr">Ustensiles de Cuisine</span>
+                    <span class="lang-es">Utensilios de Cocina</span>
+                    <span class="lang-pt">Utensílios de Cozinha</span>
+                    <span class="lang-ru">Кухонные принадлежности</span>
+                    <span class="lang-ar">أدوات المطبخ</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Spatula, tongs and tools</span>
+                    <span class="lang-fr">Spatule, pinces et accessoires</span>
+                    <span class="lang-es">Espátulas, pinzas y herramientas</span>
+                    <span class="lang-pt">Espátulas, pinças e ferramentas</span>
+                    <span class="lang-ru">Лопатки, щипцы и инструменты</span>
+                    <span class="lang-ar">مجاذيف ومقابض وأدوات</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 热销产品 -->
+<section class="section-padding" id="products">
+    <div class="container">
+        <div class="section-title">
+            <h2>
+                <span class="lang-en">Hot Selling Products</span>
+                <span class="lang-fr">Produits Populaires</span>
+                <span class="lang-es">Productos Más Vendidos</span>
+                <span class="lang-pt">Produtos Mais Vendidos</span>
+                <span class="lang-ru">Хиты продаж</span>
+                <span class="lang-ar">المنتجات الأكثر مبيعاً</span>
+            </h2>
+        </div>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1584947895513-3f353a3ff304?auto=format&fit=crop&w=600&q=80">
+                </div>
+                <div class="product-info">
+                    <h4>Stainless Steel Cookware Set</h4>
+                    <div class="feature">Food Grade | Durable</div>
+                    <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
+                        <span class="lang-en">Inquire Now</span>
+                        <span class="lang-fr">Demander un Devis</span>
+                        <span class="lang-es">Consultar</span>
+                        <span class="lang-pt">Consultar</span>
+                        <span class="lang-ru">Запросить цену</span>
+                        <span class="lang-ar">استفسار الآن</span>
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1590794068248-32c1fd274f13?auto=format&fit=crop&w=600&q=80">
+                </div>
+                <div class="product-info">
+                    <h4>Non-Stick Frying Pan</h4>
+                    <div class="feature">Even Heating</div>
+                    <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
+                        <span class="lang-en">Inquire Now</span>
+                        <span class="lang-fr">Demander un Devis</span>
+                        <span class="lang-es">Consultar</span>
+                        <span class="lang-pt">Consultar</span>
+                        <span class="lang-ru">Запросить цену</span>
+                        <span class="lang-ar">استفسار الآن</span>
+                    </a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80">
+                </div>
+                <div class="product-info">
+                    <h4>Large Soup Pot</h4>
+                    <div class="feature">Multi Size</div>
+                    <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
+                        <span class="lang-en">Inquire Now</span>
+                        <span class="lang-fr">Demander un Devis</span>
+                        <span class="lang-es">Consultar</span>
+                        <span class="lang-pt">Consultar</span>
+                        <span class="lang-ru">Запросить цену</span>
+                        <span class="lang-ar">استفسار الآن</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 关于我们 -->
+<section class="about-section section-padding" id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>
+                <span class="lang-en">About LUFLO Factory</span>
+                <span class="lang-fr">À Propos de LUFLO</span>
+                <span class="lang-es">Sobre Fábrica LUFLO</span>
+                <span class="lang-pt">Sobre a Fábrica LUFLO</span>
+                <span class="lang-ru">О заводе LUFLO</span>
+                <span class="lang-ar">عن مصنع LUFLO</span>
+            </h2>
+        </div>
+        <div class="about-wrap">
+            <div class="about-text">
+                <h3>
+                    <span class="lang-en">Reliable Kitchenware Exporter</span>
+                    <span class="lang-fr">Exportateur Fiable</span>
+                    <span class="lang-es">Exportador Confiable</span>
+                    <span class="lang-pt">Exportador Confiável</span>
+                    <span class="lang-ru">Надежный экспортер посуды</span>
+                    <span class="lang-ar">مصدر موثوق لأواني المطبخ</span>
+                </h3>
+                <p>
+                    <span class="lang-en">Professional factory in China with 10+ years export experience, food grade standard products for global market.</span>
+                    <span class="lang-fr">Usine professionnelle chinoise, 10 ans d'export, norme alimentaire internationale.</span>
+                    <span class="lang-es">Fábrica china profesional, más de 10 años de exportación, estándar alimentario.</span>
+                    <span class="lang-pt">Fábrica chinesa profissional, mais de 10 anos de exportação, padrão alimentar.</span>
+                    <span class="lang-ru">Профессиональный китайский завод, 10+ лет экспорта, продукция пищевого стандарта.</span>
+                    <span class="lang-ar">مصنع صيني احترافي، خبرة تصدير أكثر من 10 سنوات، منتجات آمنة للطعام.</span>
+                </p>
+                <p>
+                    <span class="lang-en">We support wholesale, mixed container and private OEM brand service.</span>
+                    <span class="lang-fr">Gros, conteneur mixte et marque privée OEM.</span>
+                    <span class="lang-es">Mayorista, contenedor mixto y marca privada OEM.</span>
+                    <span class="lang-pt">Atacado, contêiner misto e marca privada OEM.</span>
+                    <span class="lang-ru">Оптовые продажи, сборные контейнеры, частный бренд OEM.</span>
+                    <span class="lang-ar">ندعم الجملة والحاويات المختلطة وخدمة العلامة الخاصة OEM.</span>
+                </p>
+                <a href="#contact" class="btn-main">
+                    <span class="lang-en">Cooperate With Us</span>
+                    <span class="lang-fr">Collaborer</span>
+                    <span class="lang-es">Cooperar</span>
+                    <span class="lang-pt">Cooperar</span>
+                    <span class="lang-ru">Сотрудничать</span>
+                    <span class="lang-ar">تعاون معنا</span>
+                </a>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1606760222467-a7f1293a7399?auto=format&fit=crop&w=800&q=80">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 工厂实力 -->
+<section class="section-padding" id="factory">
+    <div class="container">
+        <div class="section-title">
+            <h2>
+                <span class="lang-en">Our Factory Strength</span>
+                <span class="lang-fr">Nos Atouts Usine</span>
+                <span class="lang-es">Fortaleza de Fábrica</span>
+                <span class="lang-pt">Força da Fábrica</span>
+                <span class="lang-ru">Преимущества завода</span>
+                <span class="lang-ar">مميزات المصنع</span>
+            </h2>
+        </div>
+        <div class="strength-grid">
+            <div class="strength-item">
+                <i class="fa-solid fa-microscope"></i>
+                <h4>
+                    <span class="lang-en">Strict QC</span>
+                    <span class="lang-fr">Contrôle Qualité</span>
+                    <span class="lang-es">Control de Calidad</span>
+                    <span class="lang-pt">Controle de Qualidade</span>
+                    <span class="lang-ru">Строгий контроль качества</span>
+                    <span class="lang-ar">مراقبة جودة صارمة</span>
+                </h4>
+                <p>
+                    <span class="lang-en">Full inspection</span>
+                    <span class="lang-fr">Inspection complète</span>
+                    <span class="lang-es">Inspección completa</span>
+                    <span class="lang-pt">Inspeção completa</span>
+                    <span class="lang-ru">Полная проверка</span>
+                    <span class="lang-ar">فحص كامل</span>
+                </p>
+            </div>
+            <div class="strength-item">
+                <i class="fa-solid fa-industry"></i>
+                <h4>
+                    <span class="lang-en">Big Capacity</span>
+                    <span class="lang-fr">Grande Capacité</span>
+                    <span class="lang-es">Gran Capacidad</span>
+                    <span class="lang-pt">Grande Capacidade</span>
+                    <span class="lang-ru">Большие мощности</span>
+                    <span class="lang-ar">طاقة إنتاجية كبيرة</span>
+                </h4>
+                <p>
+                    <span class="lang-en">Bulk order supported</span>
+                    <span class="lang-fr">Grosse commande possible</span>
+                    <span class="lang-es">Pedidos grandes</span>
+                    <span class="lang-pt">Pedidos em grande escala</span>
+                    <span class="lang-ru">Поддержка крупных заказов</span>
+                    <span class="lang-ar">ندعم الطلبات الكبيرة</span>
+                </p>
+            </div>
+            <div class="strength-item">
+                <i class="fa-solid fa-palette"></i>
+                <h4>OEM & ODM</h4>
+                <p>
+                    <span class="lang-en">Custom logo & package</span>
+                    <span class="lang-fr">Logo et emballage personnalisé</span>
+                    <span class="lang-es">Logo y empaque personalizado</span>
+                    <span class="lang-pt">Logo e embalagem personalizada</span>
+                    <span class="lang-ru">Индивидуальный логотип и упаковка</span>
+                    <span class="lang-ar">شعار وتغليف مخصص</span>
+                </p>
+            </div>
+            <div class="strength-item">
+                <i class="fa-solid fa-clock"></i>
+                <h4>
+                    <span class="lang-en">Fast Delivery</span>
+                    <span class="lang-fr">Livraison Rapide</span>
+                    <span class="lang-es">Envío Rápido</span>
+                    <span class="lang-pt">Entrega Rápida</span>
+                    <span class="lang-ru">Быстрая доставка</span>
+                    <span class="lang-ar">تسليم سريع</span>
+                </h4>
+                <p>
+                    <span class="lang-en">On time shipment</span>
+                    <span class="lang-fr">Expédition à temps</span>
+                    <span class="lang-es">Envío puntual</span>
+                    <span class="lang-pt">Envio pontual</span>
+                    <span class="lang-ru">Своевременная отправка</span>
+                    <span class="lang-ar">شحن في الموعد المحدد</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 定制服务 -->
+<section class="custom-section section-padding" id="custom">
+    <div class="container">
+        <div class="section-title">
+            <h2>OEM & ODM Service</h2>
+            <p>
+                <span class="lang-en">One-stop private brand solution</span>
+                <span class="lang-fr">Solution marque privée complète</span>
+                <span class="lang-es">Solución de marca privada</span>
+                <span class="lang-pt">Solução de marca privada</span>
+                <span class="lang-ru">Комплексное решение для частного бренда</span>
+                <span class="lang-ar">حل متكامل للعلامات التجارية الخاصة</span>
+            </p>
+        </div>
+        <div class="custom-process">
+            <div class="process-step"><div class="step-number">1</div><div class="step-text"><span class="lang-en">Confirm demand</span><span class="lang-fr">Confirmer la demande</span><span class="lang-es">Confirmar solicitud</span><span class="lang-pt">Confirmar demanda</span><span class="lang-ru">Уточнение требований</span><span class="lang-ar">تأكيد الطلب</span></div></div>
+            <div class="process-step"><div class="step-number">2</div><div class="step-text"><span class="lang-en">Design & sample</span><span class="lang-fr">Design et échantillon</span><span class="lang-es">Diseño y muestra</span><span class="lang-pt">Design e amostra</span><span class="lang-ru">Дизайн и образец</span><span class="lang-ar">التصميم والعينات</span></div></div>
+            <div class="process-step"><div class="step-number">3</div><div class="step-text"><span class="lang-en">Sample confirmation</span><span class="lang-fr">Validation échantillon</span><span class="lang-es">Confirmar muestra</span><span class="lang-pt">Confirmação da amostra</span><span class="lang-ru">Подтверждение образца</span><span class="lang-ar">اعتماد العينة</span></div></div>
+            <div class="process-step"><div class="step-number">4</div><div class="step-text"><span class="lang-en">Mass production</span><span class="lang-fr">Production série</span><span class="lang-es">Producción masiva</span><span class="lang-pt">Produção em massa</span><span class="lang-ru">Массовое производство</span><span class="lang-ar">الإنتاج الضخم</span></div></div>
+            <div class="process-step"><div class="step-number">5</div><div class="step-text"><span class="lang-en">Inspection & ship</span><span class="lang-fr">Contrôle et expédition</span><span class="lang-es">Inspección y envío</span><span class="lang-pt">Inspeção e envio</span><span class="lang-ru">Проверка и отправка</span><span class="lang-ar">الفحص والشحن</span></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- 客户评价 -->
+<section class="section-padding" id="review">
+    <div class="container">
+        <div class="section-title">
+            <h2>
+                <span class="lang-en">Customer Reviews</span>
+                <span class="lang-fr">Avis Clients</span>
+                <span class="lang-es">Reseñas Clientes</span>
+                <span class="lang-pt">Avaliações de Clientes</span>
+                <span class="lang-ru">Отзывы клиентов</span>
+                <span class="lang-ar">آراء العملاء</span>
+            </h2>
+        </div>
+        <div class="review-grid">
+            <div class="review-card">
+                <p>
+                    <span class="lang-en">Stable quality and good price for African market.</span>
+                    <span class="lang-fr">Bonne qualité et prix pour marché africain.</span>
+                    <span class="lang-es">Calidad estable y buen precio para África.</span>
+                    <span class="lang-pt">Qualidade estável e bom preço para África.</span>
+                    <span class="lang-ru">Стабильное качество и выгодная цена для Африки.</span>
+                    <span class="lang-ar">جودة مستقرة وسعر مناسب لسوق إفريقيا.</span>
+                </p>
+                <div class="review-name">— Africa Importer</div>
+            </div>
+            <div class="review-card">
+                <p>
+                    <span class="lang-en">Professional OEM service, easy to build own brand.</span>
+                    <span class="lang-fr">Service OEM professionnel pour marque privée.</span>
+                    <span class="lang-es">Servicio OEM profesional para marca propia.</span>
+                    <span class="lang-pt">Serviço OEM profissional para marca própria.</span>
+                    <span class="lang-ru">Профессиональный OEM-сервис для создания своего бренда.</span>
+                    <span class="lang-ar">خدمة OEM احترافية لبناء علامتك التجارية الخاصة.</span>
+                </p>
+                <div class="review-name">— European Buyer</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 联系我们 -->
+<section class="contact-section section-padding" id="contact">
+    <div class="container">
+        <div class="section-title">
+            <h2>
+                <span class="lang-en">Contact LUFLO</span>
+                <span class="lang-fr">Contacter LUFLO</span>
+                <span class="lang-es">Contactar LUFLO</span>
+                <span class="lang-pt">Contatar LUFLO</span>
+                <span class="lang-ru">Связаться с LUFLO</span>
+                <span class="lang-ar">تواصل مع LUFLO</span>
+            </h2>
+        </div>
+        <div class="contact-wrap">
+            <div class="contact-info">
+                <h4>Get In Touch</h4>
+                <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: +86 18069950755</p>
+                <p><i class="fa-solid fa-envelope"></i> Email: info@luflo.com</p>
+                <p>
+                    <span class="lang-en">24/7 Online Service</span>
+                    <span class="lang-fr">Service 24h/24</span>
+                    <span class="lang-es">Servicio 24/7</span>
+                    <span class="lang-pt">Serviço 24/7</span>
+                    <span class="lang-ru">Круглосуточная поддержка</span>
+                    <span class="lang-ar">خدمة متاحة 24/7</span>
+                </p>
+            </div>
+            <div class="contact-form">
+                <form id="customerForm">
+                    <input type="text" id="cName" placeholder="Your Name" required>
+                    <input type="email" id="cEmail" placeholder="Your Email" required>
+                    <input type="text" id="cPhone" placeholder="WhatsApp / Phone" required>
+                    <textarea id="cMsg" placeholder="Your inquiry..." required></textarea>
+                    <button type="submit" class="btn-main">
+                        <span class="lang-en">Send Inquiry</span>
+                        <span class="lang-fr">Envoyer</span>
+                        <span class="lang-es">Enviar</span>
+                        <span class="lang-pt">Enviar</span>
+                        <span class="lang-ru">Отправить запрос</span>
+                        <span class="lang-ar">إرسال الاستفسار</span>
+                    </button>
+                </form>
+                <p id="submitTip" style="margin-top:15px; display:none;"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 悬浮WhatsApp -->
+<a href="https://wa.me/8618069950755" class="float-whatsapp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- 页脚 -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>LUFLO KITCHENWARE</h3>
+                <p>
+                    <span class="lang-en">Professional kitchenware manufacturer from China</span>
+                    <span class="lang-fr">Fabricant d'articles de cuisine Chine</span>
+                    <span class="lang-es">Fabricante de utensilios China</span>
+                    <span class="lang-pt">Fabricante de utensílios China</span>
+                    <span class="lang-ru">Производитель кухонной посуды из Китая</span>
+                    <span class="lang-ar">مصنع أواني مطبخ صيني احترافي</span>
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>Links</h3>
+                <a href="#home"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="lang-es">Inicio</span><span class="lang-pt">Início</span><span class="lang-ru">Главная</span><span class="lang-ar">الرئيسية</span></a>
+                <a href="#contact"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span><span class="lang-es">Contacto</span><span class="lang-pt">Contato</span><span class="lang-ru">Контакты</span><span class="lang-ar">تواصل</span></a>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>WhatsApp: +86 18069950755</p>
+                <p>Email: info@luflo.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © 2025 LUFLO Kitchenware. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+// 六语言切换 + 阿拉伯语RTL排版
+function switchLang(lang){
+    // 隐藏所有语言
+    document.querySelectorAll('.lang-en,.lang-fr,.lang-es,.lang-pt,.lang-ru,.lang-ar').forEach(el=>{
+        el.style.display = 'none';
+    });
+    // 显示选中语言
+    document.querySelectorAll('.lang-'+lang).forEach(el=>{
+        el.style.display = 'inline-block';
+    });
+    // 阿拉伯语开启RTL
+    if(lang === 'ar'){
+        document.body.classList.add('rtl');
+    } else {
+        document.body.classList.remove('rtl');
+    }
+    // 按钮高亮
+    document.querySelectorAll('.lang-switch a').forEach(a=>a.classList.remove('active'));
+    event.target.classList.add('active');
+}
+// 默认打开英语
+window.onload = function(){
+    switchLang('en');
+}
+
+// ========== 表单自动推送 WhatsApp 功能 ==========
+const receiveWaNumber = "8618069950755";
+
+document.getElementById("customerForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    let name = document.getElementById("cName").value;
+    let email = document.getElementById("cEmail").value;
+    let phone = document.getElementById("cPhone").value;
+    let msg = document.getElementById("cMsg").value;
+
+    let text = "📩 New Inquiry from LUFLO Website\n\n"
+             + "Name：" + name + "\n"
+             + "Email：" + email + "\n"
+             + "Phone：" + phone + "\n"
+             + "Message：\n" + msg;
+
+    let url = "https://wa.me/" + receiveWaNumber + "?text=" + encodeURIComponent(text);
+
+    // 打开新窗口发送消息
+    window.open(url,"_blank");
+
+    // 显示提交成功提示
+    let tip = document.getElementById("submitTip");
+    tip.textContent = "✅ Your inquiry has been sent! Please check WhatsApp.";
+    tip.style.color = "#c9973b";
+    tip.style.display = "block";
+
+    // 清空表单
+    this.reset();
+});
+</script>
+</body>
+</html>
