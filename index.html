@@ -375,7 +375,7 @@
     </div>
 </section>
 
-<!-- 热销产品 珐琅壶 稳定图片 -->
+<!-- 热销产品 珐琅壶 稳定无防盗链版 -->
 <section class="section-padding" id="products">
     <div class="container">
         <div class="section-title">
@@ -389,13 +389,14 @@
             </h2>
         </div>
         <div class="product-grid">
+            <!-- 产品1：法式甜点珐琅水壶 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://img10.360buyimg.com/imagetools/jfs/t1/208064/24/25733/121584/647d2253F2726f593/3512c3a46838b868.jpg" alt="Enamel Kettle">
+                    <img src="https://i.imgur.com/w1h5F9w.png" alt="French Dessert Enamel Kettle" loading="lazy">
                 </div>
                 <div class="product-info">
-                    <h4>Classic Red Enamel Kettle</h4>
-                    <div class="feature">Material: Enamel | Food Grade</div>
+                    <h4>French Dessert Enamel Kettle</h4>
+                    <div class="feature">Material: Enamel | Capacity: 1.8L</div>
                     <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
                         <span class="lang-en">Inquire Now</span>
                         <span class="lang-fr">Demander un Devis</span>
@@ -406,13 +407,14 @@
                     </a>
                 </div>
             </div>
+            <!-- 产品2：花鸟彩绘珐琅水壶 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://img12.360buyimg.com/imagetools/jfs/t1/195334/10/26390/97634/646f3944F93772d94/8902969886688095.jpg" alt="Floral Enamel Kettle">
+                    <img src="https://i.imgur.com/5JZ9b7H.jpg" alt="Floral & Bird Enamel Kettle" loading="lazy">
                 </div>
                 <div class="product-info">
-                    <h4>Floral Pattern Enamel Kettle</h4>
-                    <div class="feature">Material: Enamel | High Temperature Resistant</div>
+                    <h4>Floral & Bird Enamel Kettle</h4>
+                    <div class="feature">Material: Enamel | Capacity: 1.8L</div>
                     <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
                         <span class="lang-en">Inquire Now</span>
                         <span class="lang-fr">Demander un Devis</span>
@@ -423,13 +425,14 @@
                     </a>
                 </div>
             </div>
+            <!-- 产品3：欧式蓝纹珐琅水壶 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://img14.360buyimg.com/imagetools/jfs/t1/202792/12/25946/113096/647d22c4F08017f90/9d225866d089f300.jpg" alt="Retro Enamel Kettle">
+                    <img src="https://i.imgur.com/0z3Xr0M.png" alt="European Blue Pattern Enamel Kettle" loading="lazy">
                 </div>
                 <div class="product-info">
-                    <h4>Retro Blue Enamel Kettle</h4>
-                    <div class="feature">Material: Enamel | Household & Hotel</div>
+                    <h4>European Blue Pattern Enamel Kettle</h4>
+                    <div class="feature">Material: Enamel | Capacity: 1.8L</div>
                     <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
                         <span class="lang-en">Inquire Now</span>
                         <span class="lang-fr">Demander un Devis</span>
@@ -493,7 +496,7 @@
                 </a>
             </div>
             <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1606760222467-a7f1293a7399?auto=format&fit=crop&w=800&q=80">
+                <img src="https://images.unsplash.com/photo-1606760222467-a7f1293a7399?auto=format&fit=crop&w=800&q=80" loading="lazy">
             </div>
         </div>
     </div>
@@ -728,3 +731,75 @@
                 <a href="#home"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="lang-es">Inicio</span><span class="lang-pt">Início</span><span class="lang-ru">Главная</span><span class="lang-ar">الرئيسية</span></a>
                 <a href="#contact"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span><span class="lang-es">Contacto</span><span class="lang-pt">Contato</span><span class="lang-ru">Контакты</span><span class="lang-ar">تواصل</span></a>
             </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <p>WhatsApp: +86 18069950755</p>
+                <p>Email: info@luflo.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © 2025 LUFLO Kitchenware. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+// 多语言切换
+function switchLang(lang){
+    document.querySelectorAll('.lang-en,.lang-fr,.lang-es,.lang-pt,.lang-ru,.lang-ar').forEach(el=>{
+        el.classList.remove('active-lang');
+    });
+    document.querySelectorAll('.lang-'+lang).forEach(el=>{
+        el.classList.add('active-lang');
+    });
+    document.querySelectorAll('.lang-switch a').forEach(a=>{
+        a.classList.remove('active');
+    });
+    document.querySelector('.lang-switch a[onclick="switchLang(\''+lang+'\')"]').classList.add('active');
+    if(lang === 'ar'){
+        document.body.classList.add('rtl');
+    }else{
+        document.body.classList.remove('rtl');
+    }
+}
+
+// 一键回顶部按钮显示/隐藏
+window.addEventListener('scroll',function(){
+    const btn = document.getElementById('backToTop');
+    if(window.scrollY > 300){
+        btn.classList.add('show');
+    }else{
+        btn.classList.remove('show');
+    }
+});
+
+// 表单提交
+document.getElementById('customerForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    let name = document.getElementById("cName").value;
+    let email = document.getElementById("cEmail").value;
+    let phone = document.getElementById("cPhone").value;
+    let msg = document.getElementById("cMsg").value;
+
+    let text = "📩 New Inquiry from LUFLO Website\n\n"
+             + "Name：" + name + "\n"
+             + "Email：" + email + "\n"
+             + "Phone：" + phone + "\n"
+             + "Message：\n" + msg;
+
+    let url = "https://wa.me/8618069950755?text=" + encodeURIComponent(text);
+    window.open(url,"_blank");
+
+    let tip = document.getElementById("submitTip");
+    tip.textContent = "✅ Your inquiry has been sent! Please check WhatsApp.";
+    tip.style.color = "#c9973b";
+    tip.style.display = "block";
+
+    this.reset();
+});
+
+// 默认显示英文
+switchLang('en');
+</script>
+</body>
+</html>
