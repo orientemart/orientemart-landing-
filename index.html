@@ -20,7 +20,6 @@
             background:#fff;
             overflow-x:hidden;
         }
-        /* 阿拉伯语从右往左排版 */
         body.rtl {direction: rtl;}
         ul,ol{list-style:none;}
         a{text-decoration:none;color:inherit;transition:0.3s;}
@@ -52,7 +51,6 @@
         }
         .btn-outline:hover{background:#fff;color:#000;}
 
-        /* 顶部栏 */
         .top-bar{background:#111;color:#ccc;font-size:14px;padding:10px 0;}
         .top-bar-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
         .lang-switch a{color:#ccc;margin:0 4px;padding:3px 6px;border:1px solid #444;border-radius:3px;font-size:13px;}
@@ -60,7 +58,6 @@
         .top-right a{color:#ccc;margin-left:15px;}
         .top-right a:hover{color:#c9973b;}
 
-        /* 导航 */
         .header-nav{background:#000;padding:18px 0;position:sticky;top:0;z-index:999;box-shadow:0 2px 10px rgba(0,0,0,0.15);}
         .nav-inner{display:flex;justify-content:space-between;align-items:center;}
         .logo{font-size:28px;font-weight:800;color:#fff;}
@@ -69,7 +66,6 @@
         .main-menu ul li a:hover{color:#c9973b;}
         .mobile-menu-btn{display:none;color:#fff;font-size:26px;}
 
-        /* 首页横幅：修复后的稳定背景图 */
         .hero-banner{
             height:90vh;
             background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
@@ -83,7 +79,6 @@
         .hero-content p{font-size:17px;color:#e6e6e6;max-width:650px;margin-bottom:35px;}
         .hero-buttons{display:flex;gap:20px;flex-wrap:wrap;}
 
-        /* 分类 */
         .category-section{background:#f8f8f8;}
         .category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:35px;}
         .category-card{background:#fff;padding:35px 25px;text-align:center;border-radius:4px;transition:0.35s;box-shadow:0 2px 15px rgba(0,0,0,0.06);}
@@ -92,7 +87,6 @@
         .category-card h3{font-size:20px;margin-bottom:12px;color:#1a1a1a;}
         .category-card p{color:#666;font-size:15px;}
 
-        /* 产品 */
         .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;}
         .product-card{background:#fff;border:1px solid #eee;border-radius:4px;overflow:hidden;transition:0.3s;}
         .product-card:hover{box-shadow:0 10px 25px rgba(0,0,0,0.08);}
@@ -103,20 +97,17 @@
         .product-info h4{font-size:18px;margin-bottom:10px;color:#222;}
         .product-info .feature{font-size:14px;color:#777;margin-bottom:15px;}
 
-        /* 关于我们 */
         .about-section{background:#f8f8f8;}
         .about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
         .about-text h3{font-size:28px;margin-bottom:20px;color:#1a1a1a;}
         .about-text p{color:#666;margin-bottom:18px;font-size:16px;}
 
-        /* 工厂实力 */
         .strength-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;}
         .strength-item{text-align:center;padding:40px 25px;border:1px solid #eee;background:#fff;transition:0.3s;}
         .strength-item:hover{background:#111;color:#fff;}
         .strength-item i{font-size:40px;color:#c9973b;margin-bottom:18px;}
         .strength-item h4{font-size:19px;margin-bottom:10px;}
 
-        /* 定制服务 */
         .custom-section{background:#111;color:#fff;}
         .custom-section .section-title h2{color:#fff;}
         .custom-section .section-title p{color:#bbb;}
@@ -124,13 +115,11 @@
         .process-step{display:flex;align-items:center;margin-bottom:25px;gap:20px;}
         .step-number{width:45px;height:45px;background:#c9973b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;color:#fff;}
 
-        /* 客户评价 */
         .review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
         .review-card{background:#f9f9f9;padding:30px;border-radius:5px;}
         .review-card p{color:#555;font-style:italic;margin-bottom:15px;}
         .review-name{color:#c9973b;font-weight:600;}
 
-        /* 联系我们 */
         .contact-section{background:#1a1a1a;color:#fff;}
         .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;}
         .contact-info h4{font-size:22px;margin-bottom:25px;color:#c9973b;}
@@ -139,11 +128,35 @@
         .contact-form input,.contact-form textarea{width:100%;padding:14px;margin-bottom:18px;background:#2c2c2c;border:none;color:#fff;outline:none;border-radius:2px;}
         .contact-form textarea{height:130px;resize:none;}
 
-        /* 悬浮WhatsApp */
         .float-whatsapp{position:fixed;right:25px;bottom:25px;width:60px;height:60px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;z-index:9999;box-shadow:0 5px 15px rgba(37,211,102,0.4);}
         body.rtl .float-whatsapp{right:auto;left:25px;}
 
-        /* 页脚 */
+        /* 一键回顶部按钮 */
+        .back-to-top{
+            position:fixed;
+            right:25px;
+            bottom:95px;
+            width:45px;
+            height:45px;
+            background:#c9973b;
+            color:#fff;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:18px;
+            z-index:9998;
+            box-shadow:0 3px 10px rgba(0,0,0,0.2);
+            opacity:0;
+            visibility:hidden;
+            transition:0.3s;
+        }
+        .back-to-top.show{
+            opacity:1;
+            visibility:visible;
+        }
+        body.rtl .back-to-top{right:auto;left:25px;}
+
         footer{background:#000;color:#999;padding:60px 0 20px;}
         .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:40px;margin-bottom:40px;}
         .footer-col h3{color:#fff;font-size:20px;margin-bottom:22px;}
@@ -151,11 +164,9 @@
         .footer-col a:hover{color:#c9973b;}
         .copyright{text-align:center;padding-top:25px;border-top:1px solid #222;font-size:14px;}
 
-        /* 多语言容器 默认只显示当前语言 */
         .lang-en,.lang-fr,.lang-es,.lang-pt,.lang-ru,.lang-ar{display:none;}
         .active-lang{display:inline-block;}
 
-        /* 移动端适配 */
         @media (max-width:992px){
             .main-menu{display:none;}
             .mobile-menu-btn{display:block;}
@@ -364,7 +375,7 @@
     </div>
 </section>
 
-<!-- 热销产品（已更新为你提供的珐琅水壶） -->
+<!-- 热销产品 珐琅壶 稳定图片 -->
 <section class="section-padding" id="products">
     <div class="container">
         <div class="section-title">
@@ -378,14 +389,13 @@
             </h2>
         </div>
         <div class="product-grid">
-            <!-- 产品1：法式甜点珐琅水壶 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.imgur.com/w1h5F9w.png" alt="French Dessert Enamel Kettle">
+                    <img src="https://img10.360buyimg.com/imagetools/jfs/t1/208064/24/25733/121584/647d2253F2726f593/3512c3a46838b868.jpg" alt="Enamel Kettle">
                 </div>
                 <div class="product-info">
-                    <h4>French Dessert Enamel Kettle</h4>
-                    <div class="feature">Material: Enamel | Capacity: 1.8L</div>
+                    <h4>Classic Red Enamel Kettle</h4>
+                    <div class="feature">Material: Enamel | Food Grade</div>
                     <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
                         <span class="lang-en">Inquire Now</span>
                         <span class="lang-fr">Demander un Devis</span>
@@ -396,14 +406,13 @@
                     </a>
                 </div>
             </div>
-            <!-- 产品2：花鸟彩绘珐琅水壶 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.imgur.com/5JZ9b7H.jpg" alt="Floral & Bird Enamel Kettle">
+                    <img src="https://img12.360buyimg.com/imagetools/jfs/t1/195334/10/26390/97634/646f3944F93772d94/8902969886688095.jpg" alt="Floral Enamel Kettle">
                 </div>
                 <div class="product-info">
-                    <h4>Floral & Bird Enamel Kettle</h4>
-                    <div class="feature">Material: Enamel | Capacity: 1.8L</div>
+                    <h4>Floral Pattern Enamel Kettle</h4>
+                    <div class="feature">Material: Enamel | High Temperature Resistant</div>
                     <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
                         <span class="lang-en">Inquire Now</span>
                         <span class="lang-fr">Demander un Devis</span>
@@ -414,14 +423,13 @@
                     </a>
                 </div>
             </div>
-            <!-- 产品3：欧式蓝纹珐琅水壶 -->
             <div class="product-card">
                 <div class="product-img">
-                    <img src="https://i.imgur.com/0z3Xr0M.png" alt="European Blue Pattern Enamel Kettle">
+                    <img src="https://img14.360buyimg.com/imagetools/jfs/t1/202792/12/25946/113096/647d22c4F08017f90/9d225866d089f300.jpg" alt="Retro Enamel Kettle">
                 </div>
                 <div class="product-info">
-                    <h4>European Blue Pattern Enamel Kettle</h4>
-                    <div class="feature">Material: Enamel | Capacity: 1.8L</div>
+                    <h4>Retro Blue Enamel Kettle</h4>
+                    <div class="feature">Material: Enamel | Household & Hotel</div>
                     <a href="#contact" class="btn-main" style="padding:9px 20px;font-size:14px;">
                         <span class="lang-en">Inquire Now</span>
                         <span class="lang-fr">Demander un Devis</span>
@@ -695,6 +703,11 @@
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<!-- 一键回顶部按钮 -->
+<a href="#home" class="back-to-top" id="backToTop">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
 <!-- 页脚 -->
 <footer>
     <div class="container">
@@ -715,74 +728,3 @@
                 <a href="#home"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="lang-es">Inicio</span><span class="lang-pt">Início</span><span class="lang-ru">Главная</span><span class="lang-ar">الرئيسية</span></a>
                 <a href="#contact"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span><span class="lang-es">Contacto</span><span class="lang-pt">Contato</span><span class="lang-ru">Контакты</span><span class="lang-ar">تواصل</span></a>
             </div>
-            <div class="footer-col">
-                <h3>Contact</h3>
-                <p>WhatsApp: +86 18069950755</p>
-                <p>Email: info@luflo.com</p>
-            </div>
-        </div>
-        <div class="copyright">
-            Copyright © 2025 LUFLO Kitchenware. All Rights Reserved.
-        </div>
-    </div>
-</footer>
-
-<script>
-// 六语言切换 + 阿拉伯语RTL排版
-function switchLang(lang){
-    // 隐藏所有语言
-    document.querySelectorAll('.lang-en,.lang-fr,.lang-es,.lang-pt,.lang-ru,.lang-ar').forEach(el=>{
-        el.style.display = 'none';
-    });
-    // 显示选中语言
-    document.querySelectorAll('.lang-'+lang).forEach(el=>{
-        el.style.display = 'inline-block';
-    });
-    // 阿拉伯语开启RTL
-    if(lang === 'ar'){
-        document.body.classList.add('rtl');
-    } else {
-        document.body.classList.remove('rtl');
-    }
-    // 按钮高亮
-    document.querySelectorAll('.lang-switch a').forEach(a=>a.classList.remove('active'));
-    event.target.classList.add('active');
-}
-// 默认打开英语
-window.onload = function(){
-    switchLang('en');
-}
-
-// ========== 表单自动推送 WhatsApp 功能 ==========
-const receiveWaNumber = "8618069950755";
-
-document.getElementById("customerForm").addEventListener("submit",function(e){
-    e.preventDefault();
-    let name = document.getElementById("cName").value;
-    let email = document.getElementById("cEmail").value;
-    let phone = document.getElementById("cPhone").value;
-    let msg = document.getElementById("cMsg").value;
-
-    let text = "📩 New Inquiry from LUFLO Website\n\n"
-             + "Name：" + name + "\n"
-             + "Email：" + email + "\n"
-             + "Phone：" + phone + "\n"
-             + "Message：\n" + msg;
-
-    let url = "https://wa.me/" + receiveWaNumber + "?text=" + encodeURIComponent(text);
-
-    // 打开新窗口发送消息
-    window.open(url,"_blank");
-
-    // 显示提交成功提示
-    let tip = document.getElementById("submitTip");
-    tip.textContent = "✅ Your inquiry has been sent! Please check WhatsApp.";
-    tip.style.color = "#c9973b";
-    tip.style.display = "block";
-
-    // 清空表单
-    this.reset();
-});
-</script>
-</body>
-</html>
